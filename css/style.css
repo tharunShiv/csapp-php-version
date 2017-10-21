@@ -1,17 +1,16 @@
 ﻿body{
     font-family: helvetica;
-    background-image: url('../image/gradient2.jpeg');
+   /* background-image: url('../image/bg2.jpg');
     background-attachment: fixed;
     background-repeat: no-repeat;
     background-size: 100%;
-    
+*/    
 }
 
 header{
     display:inline-block;
     width:80%;
     border-left:4px solid #1ec87e;
-    margin:auto;
     text-align: center;
     margin-left: 10%;
 }
@@ -19,7 +18,9 @@ header{
 header h1{
     font-size:28px;
 }
-
+.w3-content w3-section{
+    max-height:200px;
+}
 .name{
     display:inline-block;
     float:left;
@@ -32,6 +33,7 @@ header h1{
     float:right;
     padding:12px;
     margin-right:3%;
+
     margin-top:1.9%;
     width:40%;
    
@@ -52,6 +54,7 @@ header h1{
     color:#1ec87e;
     border:2px solid #1ec87e;
 }
+
 
 .middle-index-button{
     width:20%; 
@@ -75,7 +78,7 @@ header h1{
 
 .search-index{
     width:40%;
-    margin-left:25%;
+    margin-left: 30%;
     padding:10px;
     border:none;
     border-left:2px solid #1ec87e;
@@ -87,6 +90,25 @@ header h1{
     
 }
 
+.inputField{
+      width:60%;
+    
+    padding:5px;
+    border:none;
+    border-left:2px solid #1ec87e;
+    border-right:1px solid #1ec87e;
+    border-top:1px solid #1ec87e;
+    border-bottom:2px solid #1ec87e;
+    border-radius:30px;
+    
+}
+
+.inputField:focus{
+    outline:none;
+     border-left:5px solid #1ec87e;
+     border-bottom:5px solid #1ec87e;
+ }
+
 .search-index:focus{
    outline:none;
     border-left:5px solid #1ec87e;
@@ -94,13 +116,14 @@ header h1{
 }
 
 .search-button-index{
-     width:10%; 
+     width:20%; 
     border:2px solid #1ec87e;
     border-radius:30px;
     background-color:#1ec87e;
     color:white;
     font-weight:bold;
     padding:9px;
+    margin-left:85px;
     text-align: center;
     
     
@@ -154,6 +177,31 @@ width:30%;
     display:inline-block;
     float:right;width:30%;
 }
+
+
+fieldset{
+	border:1px solid #1ec87e ;
+	
+	width:40%;
+	margin:auto;
+    padding:15px;
+	text-align: center;
+	margin-top:70px;
+	 border-radius:30px;
+}
+
+
+
+/*#reg{
+	border:1px solid #1ec87e ;
+	
+	width:50%;
+	
+	padding:15px;
+	margin-top:70px;
+	
+}*/
+
 
 /*
 header{

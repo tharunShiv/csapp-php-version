@@ -22,26 +22,27 @@
           </div>
         <div class="buttons">    
 		  
-            <a class="header-b" href=""><button class="header-buttons" >Scholar Login</button></a>
-            <a class="header-b"  href=""> <button class="header-buttons" >Institution Login</button></a>
+            <a class="header-b" href="loginp.php"><button class="header-buttons" >Scholar Login</button></a>
+            <a class="header-b"  href="logini.php"> <button class="header-buttons" >Institution Login</button></a>
           
         </div>
 	</header>
    
      <div class="w3-content w3-section" style="width:100%">
-  <img class="mySlides w3-animate-fade" src="image/1.png" style="width:100%">
-  <img class="mySlides w3-animate-fade" src="image/2.png" style="width:100%">
+  <img class="mySlides w3-animate-fade" src="image/ec1.png" style="width:100%">
+  <img class="mySlides w3-animate-fade" src="image/4.png" style="width:100%">
   <img class="mySlides w3-animate-fade" src="image/3.png" style="width:100%">
+  
   
 </div>
      
      <section>
          <div class="middle-index">
              
-             <a href=""><button class="middle-index-button" >Create an Account - Scholars</button></a>   
+             <a href="regp.php"><button class="middle-index-button" >Create an Account - Scholars</button></a>   
              
              
-             <br/><a href=""><button class="middle-index-button" >Create an Account - Institution</button></a>
+             <br/><a href="regi.php"><button class="middle-index-button" >Create an Account - Institution</button></a>
              
              <form>
                  <br/><br/><input type="text" placeholder="Search yourself..." class="search-index" />
@@ -105,7 +106,7 @@
 	</form>
 	</footer>
 	-->
-	<script>
+	<script type="application/javascript">
 var myIndex = 0;
 carousel();
 
@@ -118,14 +119,13 @@ function carousel() {
     myIndex++;
     if (myIndex > x.length) {myIndex = 1}    
     x[myIndex-1].style.display = "block";  
-    setTimeout(carousel, 10000);    
+    setTimeout(carousel, 7000);    
 }
 </script>
 
-
 	<!--PHP part begins-->
 	
-	<?php
+	<!--
 			if(isset($_POST['login']))
 			{
 				@$username=$_POST['username'];
@@ -157,30 +157,12 @@ function carousel() {
 			}
 			else
 			{
-			}
+			}*/
 		?>
 	
 	
 	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
+	-->
 	
 </body>
 </html>
