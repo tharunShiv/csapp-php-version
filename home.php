@@ -86,12 +86,26 @@
 
 <section class="main-middle">
     <h2>Upload Your Publication</h2>
+
 		<form action="upload.php" method="POST" enctype="multipart/form-data">
-    <input  type="file" name="file"/>
+			<input class="inputField" type="text" placeholder="Publication Name" name="pname" required/>
+			<input class="inputField" type="date" placeholder="Date Published" name="pyear" required/><br/><br/>
+			<textarea class="inputField" name="comments" placeholder="About This Publication(optional)" rows="4" cols="50"></textarea>
+    <br/><br/><p style="color:#1ec87e;font-weight:bold;">Choose A File To Upload</p><input  type="file" name="file"/><br/><br/>
 		<button class="upbutton" type="submit" name="submit">Upload File</button>
 
 	</form><br/>
-
+	<hr style="width:70%;">
+      <p style="text-align:center;color:#1ec87e;font-weight:bold;">(OR)</p>
+			<hr style="width:70%;"><br/><br/>
+			<form action="" method="POST" >
+         <label style="color:#1ec87e;font-weight:bold;">Enter a Link to the Publication</label><br/><br/>
+				 <input class="inputField" type="text" placeholder="URL" name="purl" required/><br/><br/>
+				 <input class="inputField" type="text" placeholder="Publication Name" name="pname" required/>
+	 			<input class="inputField" type="date" placeholder="Date Published" name="pyear" required/><br/><br/>
+	 			<textarea class="inputField" name="comments" placeholder="About This Publication(optional)" rows="4" cols="50"></textarea><br/><br/>
+         <button class="upbutton" type="submit" name="submit">Submit</button>
+			</form>
 	<?php if(isset($_GET['msg'])){?>
 			<div class="alertmsg">
 	           <p style="color:green;"> Status:<?php echo $_GET['msg']; ?></p>
@@ -133,13 +147,14 @@
 <?php
 
     if(isset($_POST['logout'])){
+		   	header("location: index.php");
 			       $_SESSION['user_login_status'] = false;
 
-						 session_unset(); //unsets all variables
-              session_destroy();
-        echo '<script type="application/javascript"> alert ("You have been logged out successfully"); </script>';
-        header( "Location: index.php");
+						// session_unset(); //unsets all variables
+              //session_destroy();
+    echo '<script type="application/javascript"> alert ("You have been logged out successfully"); </script>';
 
+        session_destroy();
     }
            ?>
 <?php } else{
