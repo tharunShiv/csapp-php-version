@@ -12,22 +12,22 @@
 <link rel="stylesheet" type="text/css" href="./css/style.css">
 </head>
 <body>
-	
-	
+
+
 	<header>
-	
-		
-	          
-		  <div class="name">	
+
+
+
+		  <div class="name">
                    <h1>Col<span style="color:#1ec87e">Sheet</span></h1>
           </div>
-<div class="buttons">    
-		  
-            <a class="header-b" href=""><button class="header-buttons" >Scholar Login</button></a>
-            <a class="header-b"  href=""> <button class="header-buttons" >Institution Login</button></a>
+<div class="buttons">
+
+            <a class="header-b" href="loginp.php"><button class="header-buttons" >Scholar Login</button></a>
+            <a class="header-b"  href="logini.php"> <button class="header-buttons" >Institution Login</button></a>
         </div>
     </header>
-          
+
           <section>
 		<div id="login form" >
 			<form method="POST" action="logini.php">
@@ -36,15 +36,15 @@
 				USERNAME:<input class="inputField" type="text" name="username" required><br/><br/>
 				PASSWORD:<input class="inputField"  type="password" name="password" required><br/><br/>
 				<input  type="submit" class="search-button-index" value="SUBMIT" name="login" />
-				
-				
+
+
 				</fieldset>
             </form>
         </div>
 	</section>
-          
+
           <!--PHP part begins-->
-	
+
 	<?php
 			if(isset($_POST['login']))
 			{
@@ -59,11 +59,11 @@
 					if(mysqli_num_rows($query_run)>0)
 					{
 					$row = mysqli_fetch_array($query_run,MYSQLI_ASSOC);
-					
+
 					$_SESSION['username'] = $username;
-					$_SESSION['password'] = $password;
-					
-					header( "Location: homepage.php");
+					//$_SESSION['password'] = $password;
+          $_SESSION['user_login_status'] = true;
+					header( "Location: home.php");
 					}
 					else
 					{
@@ -79,12 +79,12 @@
 			{
 			}
 		?>
-	
-          
-          
-          
-       
-        
-        
+
+
+
+
+
+
+
     </body>
 </html>

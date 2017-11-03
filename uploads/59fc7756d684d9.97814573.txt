@@ -1,0 +1,15 @@
+bug
+
+when we login in , we get the page, 
+we are able to move back n forth without logging out
+and the log out button also stays there itself
+
+bug 2
+
+how do i dynamically change the title of every page
+
+bug 3
+
+how do i bring the error message on the index page below the showcase
+
+

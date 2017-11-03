@@ -21,8 +21,8 @@
           </div>
 <div class="buttons">    
 		  
-            <a class="header-b" href=""><button class="header-buttons" >Scholar Login</button></a>
-            <a class="header-b"  href=""> <button class="header-buttons" >Institution Login</button></a>
+            <a class="header-b" href="loginp.php"><button class="header-buttons" >Scholar Login</button></a>
+            <a class="header-b"  href="logini.php"> <button class="header-buttons" >Institution Login</button></a>
           
         </div>
         </header>
@@ -33,32 +33,32 @@
 		 <legend><b >Create Account</b></legend>
 
 
-NAME OF INSTITUTION:<br/><input type="text" class="inputField" value="" name="nameI"><br/><br/>
+NAME OF INSTITUTION:<br/><input type="text" class="inputField" value="" name="nameI" required><br/><br/>
 		                     
-		                     COUNTRY:<br/><select name="country" class="inputField">
+		                     COUNTRY:<br/><select name="country" class="inputField" required>
 			              		<option  value="india">INDIA</option>
 			       	                  <option value="other">OTHER</option>
 				       </select><br/><br/>
 			        
-			          STATE:<br/><select name="state" class="inputField">	
+			          STATE:<br/><select name="state" class="inputField" required>	
 				 	<option value="karnataka">KARNATAKA</option>
 			       	                  <option value="other">OTHER</option>
 			 	       </select><br/><br/>
 			              
-			                CITY:<br/><select name="city" class="inputField">	
+			                CITY:<br/><select name="city" class="inputField" required>	
 				 	<option value="bangalore">BANGALORE</option>
 			       	                  <option value="other">OTHER</option>
 			 	       </select><br/><br/>
 						
-               USERNAME:<br/><input type="text" class="inputField" name="username"><br/>	<br/>
+               USERNAME:<br/><input type="text" class="inputField" name="username" required><br/>	<br/>
 			       
-                    EMAIL ID:<br/><input type="email" class="inputField" name="emailid"><br/><br/>
+                    EMAIL ID:<br/><input type="email" class="inputField" name="emailid" required><br/><br/>
 			            
-			            Ph.no:<br/><input type="number" class="inputField" name="phoneno"><br/><br/>
+			            Ph.no:<br/><input type="number" class="inputField" name="phoneno" required><br/><br/>
 		   
-                  ENTER PASSWORD:<br/><input type="password" class="inputField" name="password" ><br/><br/>
+                  ENTER PASSWORD:<br/><input type="password" class="inputField" name="password" required><br/><br/>
 	                 
-	                 CONFIRM PASSWORD:<br/><input type="password" class="inputField" name="cpassword"><br/>
+	                 CONFIRM PASSWORD:<br/><input type="password" class="inputField" name="cpassword" required><br/>
 		<br/>
 
 	<input class="search-button-index" type="submit" name="submit" value="submit"><br/>

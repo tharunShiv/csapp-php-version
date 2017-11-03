@@ -21,8 +21,8 @@
           </div>
 <div class="buttons">    
 		  
-            <a class="header-b" href=""><button class="header-buttons" >Scholar Login</button></a>
-            <a class="header-b"  href=""> <button class="header-buttons" >Institution Login</button></a>
+            <a class="header-b" href="loginp.php"><button class="header-buttons" >Scholar Login</button></a>
+            <a class="header-b"  href="logini.php"> <button class="header-buttons" >Institution Login</button></a>
           
         </div>
         </header>
@@ -32,23 +32,23 @@
 		<fieldset>
 		<legend>Create Account</legend>
 		NAME:<br/>
-			<input type="text" class="inputField" name="name" placeholder="name"><br/><br/>
+			<input type="text" class="inputField" name="name" placeholder="name" required><br/><br/>
 		DATE OF BIRTH:<br/>
-			<input type="date"class="inputField" name="dob"><br/><br/>
+			<input type="date" class="inputField" name="dob" required><br/><br/>
 		GENDER:<br/>
 			<select name="gender" class="inputField">
 				<option name="gender" value="male">MALE</option>
 				<option name="gender"value="female">FEMALE</option>
 			</select><br/><br/>
 		Ph No:<br/>
-			<input name="phoneno" class="inputField"type="tel"><br/><br/>
+			<input type="tel" name="phoneno" class="inputField" required><br/><br/>
 		<!--college name has to come bro i have a doubt-->
 		<!--EDUCTIONAL QUALIFICATIONS:<br/>
 			<input name="eq" type="text"><br/> -->
 			USERNAME<br/>
-			<input type="text"class="inputField" name="username"><br/><br/>
+			<input type="text" class="inputField" name="username" required><br/><br/>
 		EMAIL-ID:<br/>
-			<input type="email" class="inputField"name="email"><br/><br/>
+			<input type="email" class="inputField"name="email" required><br/><br/>
 		COUNTRY:<br/>
 			<select name="country" class="inputField">
 				<option name="country"class="inputField" value="INDIA">INDIA</option>
@@ -68,7 +68,7 @@
 	        CONFIRM PASSWORD:<br/><input type="password"class="inputField" name="cpassword"><br/><br/>
 		
 		ID-No:<br/>
-			<input name="id" class="inputField"type="text" ><br/><br/>
+			<input name="id" class="inputField"type="text" required ><br/><br/>
 		<input type="submit" name="submit" class="search-button-index" value="SUBMIT"><br/>	
 
 			
