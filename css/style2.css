@@ -254,3 +254,11 @@ min-height:700px;
   display:inline-block;
 
 }
+.profilepic{
+  width:60%;
+  display:block;
+   margin-left:auto;
+   margin-right:auto;
+   border-radius:100%;
+
+}

@@ -34,10 +34,10 @@
 <hr/>
 
 <aside>
-<ul>
-    <h3>welcome <span style="color:#1ec87e"><?php echo $_SESSION["username"]; ?></span></h3>
-</ul>
-<img src="" alt="user image" style="width:100px;height:100px;">
+
+    <h3 style="text-align:center;"> Welcome <span style="color:#1ec87e"><?php echo $_SESSION["username"]; ?></span></h3>
+
+<img src="image/default-profile-picture.png" alt="user image" class="profilepic">
 <hr/>
 <ul style="list-style-type:none;">
 <p>My Dashboard</p>
@@ -133,6 +133,9 @@
 <?php
 
     if(isset($_POST['logout'])){
+			       $_SESSION['user_login_status'] = false;
+
+						 session_unset(); //unsets all variables
               session_destroy();
         echo '<script type="application/javascript"> alert ("You have been logged out successfully"); </script>';
         header( "Location: index.php");
