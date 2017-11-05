@@ -5,6 +5,8 @@
 //establish connection
 	require_once('dbconfig/config.php');
 	//phpinfo();
+    $_SESSION['user_login_status'] = false;
+	if(!$_SESSION['user_login_status']){
 ?>
 <html>
 <head>
@@ -128,7 +130,7 @@ NAME OF INSTITUTION:<br/><input type="text" class="inputField" value="" name="na
 	             else{
 
 	              }
-  
+				}
   
 
    ?>

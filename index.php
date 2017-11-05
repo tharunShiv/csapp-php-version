@@ -9,7 +9,9 @@
 <html>
 <head>
 <title>Welcome | ColSheet</title>
-<link rel="stylesheet" type="text/css" href="./css/style.css">
+
+<link rel="stylesheet" type="text/css" href="./css/style.css?v=1">
+
 </head>
 <body>
 	<header>
@@ -38,11 +40,13 @@
      
      <section>
          <div class="middle-index">
-             
-             <a href="regp.php"><button class="middle-index-button" >Create an Account - Scholars</button></a>   
-             
-             
-             <br/><a href="regi.php"><button class="middle-index-button" >Create an Account - Institution</button></a>
+		 <?php if(isset($_GET['msg'])){?>
+			<div class="alertmsg">
+	           <p style="color:green;"> Status:<?php echo $_GET['msg']; ?></p>
+			</div>
+		<?php } ?><br/>
+	     <a href="regp.php"><button class="middle-index-button" >Create an Account - Scholars</button></a>   
+         <br/><a href="regi.php"><button class="middle-index-button" >Create an Account - Institution</button></a>
              
              <form>
                  <br/><br/><input type="text" placeholder="Search yourself..." class="search-index" />

@@ -5,6 +5,8 @@
 //establish connection
 	require_once('dbconfig/config.php');
 	//phpinfo();
+	$_SESSION['user_login_status'] = false;
+	if(!$_SESSION['user_login_status']){
 ?>
 <html>
 <head>
@@ -19,7 +21,8 @@
 
 
 		  <div class="name">
-                   <h1>Col<span style="color:#1ec87e">Sheet</span></h1>
+				  <a href="index.php" style="text-decoration:none;color:black"> <h1>Col<span style="color:#1ec87e">Sheet</span></h1></a>
+				  
           </div>
 <div class="buttons">
 
@@ -36,7 +39,7 @@
 				USERNAME:<input class="inputField" type="text" name="username" required><br/><br/>
 				PASSWORD:<input class="inputField"  type="password" name="password" required><br/><br/>
 				<input  type="submit" class="search-button-index" value="SUBMIT" name="login" />
-
+                
 
 				</fieldset>
             </form>
@@ -79,6 +82,9 @@
 			else
 			{
 			}
+		
+		
+		}
 		?>
 
 

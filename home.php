@@ -201,7 +201,7 @@
     session_destroy();
     $_SESSION['user_login_status'] = false;
     */
-	header("location: index.php?elsen");
+	header("location: index.php?msg=Logged+Out+Successfully");
 }?>
 
 <?php
@@ -215,7 +215,7 @@
               
         session_destroy();
     echo '<script type="application/javascript"> alert ("You have been logged out successfully");  </script>';
-    header("Location: index.php?sesl");
+    header("Location: index.php?msg=Logged+Out+Successfully");
         //session_destroy();
     }
            ?>

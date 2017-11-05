@@ -190,6 +190,20 @@ fieldset{
 	 border-radius:30px;
 }
 
+.alertmsg{
+    width:50%;
+    margin:auto;
+    margin-top:2%;
+    margin-right:auto;
+    margin-left:auto;
+
+    border:2px solid green;
+    background-color:#b3ffb3;
+    padding:1px;
+    text-align: center;
+    display:block;
+  
+  }
 
 
 /*#reg{

@@ -212,7 +212,7 @@
     if(isset($_POST['logout'])){
         $_SESSION['user_login_status'] = false;
         
-		   	header('Location: index.php?logged+out+successfully');
+		   	header('Location: index.php?msg=Logged+Out+Successfully');
 			       
 
 						session_unset(); //unsets all variables
@@ -226,7 +226,7 @@
     session_unset(); //unsets all variables
     session_destroy();
     $_SESSION['user_login_status'] = false;
-	header("location: index.php?elsen");
+	header("location: index.php?msg=Logged+Out+Successfully");
 }?>
 
 <?php
