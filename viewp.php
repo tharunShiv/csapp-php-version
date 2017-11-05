@@ -141,6 +141,33 @@
               }else{
                   header("Location : editp.php?msg=database+error+123 " );
               }
+       } else {
+
+        $username = $_SESSION['username'];
+        $q= mysqli_query($con, "SELECT * FROM usersp WHERE username='$username'");
+        if($q){
+          $row = mysqli_fetch_assoc($q);
+          
+          echo '<h2 style="color:black;font-weight:bold;text-align:center">Name Of The Scholar: <span style="color:#1ec87e;">'.strtoupper($row['name']).'</span></h2>';
+          echo '<h2 style="color:black;font-weight:bold;text-align:center">D.O.B: <span style="color:#1ec87e;">'.strtoupper($row['dob']).'</span></h2>';
+          echo '<h2 style="color:black;font-weight:bold;text-align:center">Gender: <span style="color:#1ec87e;">'.strtoupper($row['gender']).'</span></h2>';
+          echo '<h2 style="color:black;font-weight:bold;text-align:center">Phone number: <span style="color:#1ec87e;">'.strtoupper($row['phoneno']).'</span></h2>';
+          echo '<h2 style="color:black;font-weight:bold;text-align:center">Email Id: <span style="color:#1ec87e;">'.strtolower($row['emailid']).'</span></h2>';
+          echo '<h2 style="color:black;font-weight:bold;text-align:center">Country: <span style="color:#1ec87e;">'.strtoupper($row['country']).'</span></h2>';
+          echo '<h2 style="color:black;font-weight:bold;text-align:center">State: <span style="color:#1ec87e;">'.strtoupper($row['state']).'</span></h2>';
+          echo '<h2 style="color:black;font-weight:bold;text-align:center">City: <span style="color:#1ec87e;">'.strtoupper($row['city']).'</span></h2>';
+          echo '<h2 style="color:black;font-weight:bold;text-align:center">ID: <span style="color:#1ec87e;">'.strtoupper($row['id']).'</span></h2>';
+      
+          /*   echo "Name Of The Institution: ".$row['nameI']."<br/><br/>";
+          echo "Country: ".$row['country']."<br/><br/>";
+          echo "State: ".$row['state']."<br/><br/>";
+          echo "City: ".$row['city']."<br/><br/>";
+          echo "EmailId: ".$row['emailid']."<br/><br/>";
+          echo "PhoneNo: ".$row['phoneno']."<br/><br/>";
+         */ 
+        }else{
+            header("Location : editp.php?msg=database+error+123 " );
+        }
        }
 
 

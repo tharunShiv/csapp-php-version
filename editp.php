@@ -211,7 +211,7 @@
 
     if(in_array($fileActualExt, $allowed)){
       if ($fileError === 0) {
-         if($fileSize < 1000000){ //100mb
+         if($fileSize < 10000000){ //100mb
             //Uploading
             //dealing with duplicates
             $fileNameNew = uniqid('', true).".".$fileActualExt; //microseconds
@@ -244,15 +244,15 @@
 
          } else {
            echo "<script type='application/javascript'>alert('FileSize must be below 100mb')</script>";
-           header("Location: edit.php?msg=File+Size+Exceeded");
+           header("Location: editp.php?msg=File+Size+Exceeded");
          }
       } else {
         echo "<script type='application/javascript'>alert('Error Uploading file')</script>";
-          header("Location: edit.php?msg=Error+Uploading");
+          header("Location: editp.php?msg=Error+Uploading");
       }
     } else {
       echo "<script type='application/javascript'>alert('Only jpg,jpeg,png allowed')</script>";
-        header("Location: edit.php?msg=Format+Unsupported");
+        header("Location: editp.php?msg=Format+Unsupported");
     }
   }
 ?>

@@ -48,7 +48,7 @@
 			USERNAME<br/>
 			<input type="text" class="inputField" name="username" required><br/><br/>
 		EMAIL-ID:<br/>
-			<input type="email" class="inputField"name="email" required><br/><br/>
+			<input type="email" class="inputField" name="emailid" required><br/><br/>
 		COUNTRY:<br/>
 			<select name="country" class="inputField">
 				<option name="country"class="inputField" value="INDIA">INDIA</option>
@@ -93,9 +93,8 @@
 		   $password = $_POST['password'];
 		   $cpassword = $_POST['cpassword'];
 		   $id = $_POST['id'];
-		   $eq = $POST['eq'];
-	  
-	   
+		  // $eq = $POST['eq'];
+	       
 	         if($password==$cpassword)
 	                 {          //to chaeck whether username exists
 		                         $query = "select * from usersp where username='$username'";
@@ -111,7 +110,7 @@
 			                               }
 			                           else
 			                                 {
-				                                         $query = "insert into usersp values('$name','$dob','$gender','$phoneno','$eq','$username','$emailid','$password','$country','$state','$city','$id','')";
+				                                         $query = "insert into usersp(name, dob, gender, phoneno, username, emailid, password, country, state, city , id) values('$name','$dob','$gender','$phoneno','$username','$emailid','$password','$country','$state','$city','$id')";
 				                                         $query_run = mysqli_query($con,$query);
 				                                         //to check whether it ran successfully
 				                                         if($query_run)
