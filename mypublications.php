@@ -1,4 +1,4 @@
-﻿<!Doctype HTML>
+<!Doctype HTML>
 <?php
   //establish connection
 	session_start();
@@ -6,12 +6,12 @@
 //establish connection
 	require_once('dbconfig/config.php');
 	//phpinfo();
-	if($_SESSION['user_login_status']){
+	if(isset($_SESSION['user_login_status'])){
 ?>
 <html>
 <head>
 <title>Welcome | ColSheet</title>
-<link rel="stylesheet" type="text/css" href="./css/style2.css?version=1">
+<link rel="stylesheet" type="text/css" href="./css/style2.css">
 </head>
 <body>
 	<header>
@@ -25,10 +25,8 @@
 	<input class="header-search" type="text" placeholder="Search yourself..."  />
                  <input type="submit" value="Search" class="search-button-index"/><br/><br/>
            <form  method="post" action="home.php">
-          <button type="submit" class="header-buttons" name="logout">logout</button>
+          <input type="submit" class="header-buttons" name="logout"  value="LogOut"/>
     </form>
-
-
 
 
         </div>
@@ -39,28 +37,14 @@
 
     <h3 style="text-align:center;"> Welcome <span style="color:#1ec87e"><?php echo $_SESSION["username"]; ?></span></h3>
 
-    <?php
-       $username = $_SESSION['username'];
-       //echo $username;
-         $q = mysqli_query($con,"SELECT * FROM users WHERE username='$username'");
-         //while($row = mysqli_fetch_assoc($q)){
-            $row = mysqli_fetch_assoc($q);
-                // echo $row['username'];
-                 if($row['image'] == ""){
-                         echo "<img width='100' class='profilepic'  height='100' src='image/default-profile-picture.png' alt='Default Profile Pic'>";
-                 } else {
-                    echo "<img width='100' height='100' class='profilepic'  src='image/profilepic/".$row['image']."' alt='Profile Pic'>";
-                 }
-                 echo "<br>";
-         //}
-     ?>
+<!--<img src="image/default-profile-picture.png" alt="user image" class="profilepic">-->
 <hr/>
 <ul style="list-style-type:none;">
 <p>My Dashboard</p>
-<li><a href="editp.php" style="color:#1ec87e;
+<li><a href="" style="color:#1ec87e;
     text-decoration: none;font-size:18px;">edit my profile</a></li>
-<li><a href="viewp.php" style="color:#1ec87e;
-    text-decoration: none;font-size:18px;">view my profile</a></li>
+<li><a href="" style="color:#1ec87e;
+    text-decoration: none;font-size:18px;">veiw my profile</a></li>
 
 </ul><hr/>
 <ul style="list-style-type:none;">
@@ -101,32 +85,20 @@
 
 
 <section class="main-middle">
-    <h2>Upload Your Publication</h2>
+     
+     <?php
+         $q = mysqli_query($con,"SELECT * FROM users");
+         while($row = mysqli_fetch_assoc($q)){
+                 echo $row['username'];
+                 if($row['image'] == ""){
+                         echo "<img width='100' height='100' src='pictures/default.jpg' alt='Default Profile Pic'>";
+                 } else {
+                         echo "<img width='100' height='100' src='pictures/".$row['image']."' alt='Profile Pic'>";
+                 }
+                 echo "<br>";
+         }
+     ?>
 
-		<form action="upload.php" method="POST" enctype="multipart/form-data">
-			<input class="inputField" type="text" placeholder="Publication Name" name="pname" required/>
-			<input class="inputField" type="date" placeholder="Date Published" name="pyear" required/><br/><br/>
-			<textarea class="inputField" name="comments" placeholder="About This Publication(optional)" rows="4" cols="50"></textarea>
-    <br/><br/><p style="color:#1ec87e;font-weight:bold;">Choose A File To Upload</p><input  type="file" name="file"/ required><br/><br/>
-		<button class="upbutton" type="submit" name="submit">Upload File</button>
-
-	</form><br/>
-	<hr style="width:70%;">
-      <p style="text-align:center;color:#1ec87e;font-weight:bold;">(OR)</p>
-			<hr style="width:70%;"><br/><br/>
-			<form action="" method="POST" >
-         <label style="color:#1ec87e;font-weight:bold;">Enter a Link to the Publication</label><br/><br/>
-				 <input class="inputField" type="text" placeholder="URL" name="purl" required/><br/><br/>
-				 <input class="inputField" type="text" placeholder="Publication Name" name="pname" required/>
-	 			<input class="inputField" type="date" placeholder="Date Published" name="pyear" required/><br/><br/>
-	 			<textarea class="inputField" name="comments" placeholder="About This Publication(optional)" rows="4" cols="50"></textarea><br/><br/>
-         <button class="upbutton" type="submit" name="submit">Submit</button>
-			</form>
-	<?php if(isset($_GET['msg'])){?>
-			<div class="alertmsg">
-	           <p style="color:green;"> Status:<?php echo $_GET['msg']; ?></p>
-			</div>
-		<?php } ?>
 
 </section>
 
@@ -160,30 +132,22 @@
 </ul>
 </aside>
 
-
-<?php } else{/*
-	session_unset(); //unsets all variables
-    session_destroy();
-    $_SESSION['user_login_status'] = false;
-    */
-	header("location: index.php?elsen");
-}?>
-
 <?php
- 
+
     if(isset($_POST['logout'])){
-		   	
+		   	header("location: index.php");
 			       $_SESSION['user_login_status'] = false;
 
 						// session_unset(); //unsets all variables
               //session_destroy();
-              
+    echo '<script type="application/javascript"> alert ("You have been logged out successfully"); </script>';
+
         session_destroy();
-    echo '<script type="application/javascript"> alert ("You have been logged out successfully");  </script>';
-    header("Location: index.php?sesl");
-        //session_destroy();
     }
            ?>
+<?php } else{
+	header("location: index.php");
+}?>
 
 </body>
 </html>

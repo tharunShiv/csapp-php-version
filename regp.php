@@ -111,7 +111,7 @@
 			                               }
 			                           else
 			                                 {
-				                                         $query = "insert into usersp values('$name','$dob','$gender','$phoneno','$eq','$username','$emailid','$password','$country','$state','$city','$id')";
+				                                         $query = "insert into usersp values('$name','$dob','$gender','$phoneno','$eq','$username','$emailid','$password','$country','$state','$city','$id','')";
 				                                         $query_run = mysqli_query($con,$query);
 				                                         //to check whether it ran successfully
 				                                         if($query_run)
@@ -120,7 +120,7 @@
 																   alert("User Registered.. Now you can LOG IN");
 																   </script>';
 					                                                $_SESSION['username'] = $username;
-					                                                $_SESSION['password'] = $password;
+					                                                //$_SESSION['password'] = $password;
 					                                                 header( "Location: index.php");
 				                                             }
 				                                          else

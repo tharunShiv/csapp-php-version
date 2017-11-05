@@ -49,8 +49,8 @@
 	<?php
 			if(isset($_POST['login']))
 			{
-				@$username=$_POST['username'];
-				@$password=$_POST['password'];
+				$username=$_POST['username'];
+				$password=$_POST['password'];
 				$query = "select * from usersp where username='$username' and password='$password' ";
 				//echo $query;
 				$query_run = mysqli_query($con,$query);
@@ -63,7 +63,8 @@
 
 					$_SESSION['username'] = $username;
 					//$_SESSION['password'] = $password;
-          $_SESSION['user_login_status'] = true;
+				   $_SESSION['user_login_status'] = true;
+				   $_SESSION['scholar'] = true;
 					header( "Location: home.php");
 					}
 					else

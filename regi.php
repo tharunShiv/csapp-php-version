@@ -98,14 +98,14 @@ NAME OF INSTITUTION:<br/><input type="text" class="inputField" value="" name="na
 			                               }
 			                           else
 			                                 {
-				                                         $query = "insert into users values('$nameI','$country','$state','$city','$username','$emailid','$phoneno','$password')";
+				                                         $query = "insert into users(nameI,country,state,city,username,emailid,phoneno,password,image) values('$nameI','$country','$state','$city','$username','$emailid','$phoneno','$password','')";
 				                                         $query_run = mysqli_query($con,$query);
 				                                         //to check whether it ran successfully
 				                                         if($query_run)
 				                                            {
 					                                               echo '<script type="text/javascript">alert("User Registered.. Now you can LOG IN")</script>';
 					                                                $_SESSION['username'] = $username;
-					                                                $_SESSION['password'] = $password;
+					                                                //$_SESSION['password'] = $password;
 					                                                 header( "Location: index.php");
 				                                             }
 				                                          else

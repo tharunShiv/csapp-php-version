@@ -62,7 +62,8 @@
 
 					$_SESSION['username'] = $username;
 					//$_SESSION['password'] = $password;
-          $_SESSION['user_login_status'] = true;
+		             $_SESSION['user_login_status'] = true;
+		              $_SESSION['scholar'] = false;
 					header( "Location: home.php");
 					}
 					else

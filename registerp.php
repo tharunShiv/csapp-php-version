@@ -113,8 +113,9 @@
 			                               }
 			                           else
 			                                 {
-				                                         $query = "insert into usersp values('$name','$dob','$gender','$phoneno','$eq','$username','$emailid','$password','$country','$state','$city','$id')";
-				                                         $query_run = mysqli_query($con,$query);
+				                                         $query = "insert into usersp values('$name','$dob','$gender','$phoneno','$eq','$username','$emailid','$password','$country','$state','$city','$id','')";
+														 $query_run = mysqli_query($con,$query);
+														 
 				                                         //to check whether it ran successfully
 				                                         if($query_run)
 				                                            {
