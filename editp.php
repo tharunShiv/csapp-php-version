@@ -57,7 +57,7 @@
 </ul><hr/>
 <ul style="list-style-type:none;">
 <p>publications</p>
-<li><a href="" style="color:#1ec87e;
+<li><a href="mypublications.php" style="color:#1ec87e;
     text-decoration: none;font-size:18px;">my publications</a></li>
 <li><a href="" style="color:#1ec87e;
     text-decoration: none;font-size:18px;">co scholar publications</a></li>

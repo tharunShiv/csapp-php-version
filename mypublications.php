@@ -38,6 +38,40 @@
     <h3 style="text-align:center;"> Welcome <span style="color:#1ec87e"><?php echo $_SESSION["username"]; ?></span></h3>
 
 <!--<img src="image/default-profile-picture.png" alt="user image" class="profilepic">-->
+
+<?php
+    if(!$_SESSION['scholar']){
+       $username = $_SESSION['username'];
+       //echo $username;
+         $q = mysqli_query($con,"SELECT * FROM users WHERE username='$username'");
+         //while($row = mysqli_fetch_assoc($q)){
+            $row = mysqli_fetch_assoc($q);
+                // echo $row['username'];
+                 if($row['image'] == ""){
+                         echo "<img width='100' class='profilepic'  height='100' src='image/default-profile-picture.png' alt='Default Profile Pic'>";
+                 } else {
+                    echo "<img width='100' height='100' class='profilepic'  src='image/profilepic/".$row['image']."' alt='Profile Pic'>";
+                 }
+                 echo "<br>";
+         //}
+                }else{
+                    $username = $_SESSION['username'];
+                    //echo $username;
+                      $q = mysqli_query($con,"SELECT * FROM usersp WHERE username='$username'");
+                      //while($row = mysqli_fetch_assoc($q)){
+                         $row = mysqli_fetch_assoc($q);
+                             // echo $row['username'];
+                              if($row['image'] == ""){
+                                      echo "<img width='100' class='profilepic'  height='100' src='image/default-profile-picture.png' alt='Default Profile Pic'>";
+                              } else {
+                                 echo "<img width='100' height='100' class='profilepic'  src='image/profilepic/".$row['image']."' alt='Profile Pic'>";
+                              }
+                              echo "<br>";
+                      //}
+
+                }
+     ?>
+
 <hr/>
 <ul style="list-style-type:none;">
 <p>My Dashboard</p>
@@ -85,22 +119,10 @@
 
 
 <section class="main-middle">
-     
-     <?php
-         $q = mysqli_query($con,"SELECT * FROM users");
-         while($row = mysqli_fetch_assoc($q)){
-                 echo $row['username'];
-                 if($row['image'] == ""){
-                         echo "<img width='100' height='100' src='pictures/default.jpg' alt='Default Profile Pic'>";
-                 } else {
-                         echo "<img width='100' height='100' src='pictures/".$row['image']."' alt='Profile Pic'>";
-                 }
-                 echo "<br>";
-         }
-     ?>
-
-
+                 
 </section>
+
+
 
 
 

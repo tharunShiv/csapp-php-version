@@ -90,7 +90,7 @@
 </ul><hr/>
 <ul style="list-style-type:none;">
 <p>publications</p>
-<li><a href="" style="color:#1ec87e;
+<li><a href="mypublications.php" style="color:#1ec87e;
     text-decoration: none;font-size:18px;">my publications</a></li>
 <li><a href="" style="color:#1ec87e;
     text-decoration: none;font-size:18px;">co scholar publications</a></li>
@@ -118,8 +118,13 @@
 
 
 <section class="main-middle">
+<?php if(isset($_GET['msg'])){?>
+			<div class="alertmsg">
+	           <p style="color:green;"> Status:<?php echo $_GET['msg']; ?></p>
+			</div>
+		<?php } ?><br/><br/>
     <h2>Upload Your Publication</h2>
-
+    
 		<form action="upload.php" method="POST" enctype="multipart/form-data">
 			<input class="inputField" type="text" placeholder="Publication Name" name="pname" required/>
 			<input class="inputField" type="date" placeholder="Date Published" name="pyear" required/><br/><br/>
@@ -131,7 +136,7 @@
 	<hr style="width:70%;">
       <p style="text-align:center;color:#1ec87e;font-weight:bold;">(OR)</p>
 			<hr style="width:70%;"><br/><br/>
-			<form action="" method="POST" >
+			<form action="home.php" method="POST" >
          <label style="color:#1ec87e;font-weight:bold;">Enter a Link to the Publication</label><br/><br/>
 				 <input class="inputField" type="text" placeholder="URL" name="purl" required/><br/><br/>
 				 <input class="inputField" type="text" placeholder="Publication Name" name="pname" required/>
@@ -139,13 +144,26 @@
 	 			<textarea class="inputField" name="comments" placeholder="About This Publication(optional)" rows="4" cols="50"></textarea><br/><br/>
          <button class="upbutton" type="submit" name="submit">Submit</button>
 			</form>
-	<?php if(isset($_GET['msg'])){?>
-			<div class="alertmsg">
-	           <p style="color:green;"> Status:<?php echo $_GET['msg']; ?></p>
-			</div>
-		<?php } ?>
+	
 
 </section>
+
+<?php
+    if(isset($_POST['submit'])){
+        $purl = $_POST['purl'];
+        $pname = $_POST['pname'];
+        $pdate = $_POST['pyear'];
+        $comments = $_POST['comments'];
+        $username = $_SESSION['username'];
+    
+        $q = mysqli_query($con, "INSERT INTO userspd(username,pname,pdate,purl,pcomment) values ('$username','$pname','$pdate','$purl','$comments')");    
+        if($q){
+            header("Location: home.php?url+ins+success");
+        }else{
+            header("Location: home.php?db+error+123");
+        }
+    }
+?>
 
 
 
