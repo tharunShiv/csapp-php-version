@@ -48,9 +48,9 @@
 	     <a href="regp.php"><button class="middle-index-button" >Create an Account - Scholars</button></a>   
          <br/><a href="regi.php"><button class="middle-index-button" >Create an Account - Institution</button></a>
              
-             <form>
-                 <br/><br/><input type="text" placeholder="Search yourself..." class="search-index" />
-                 <input type="submit" value="Search" class="search-button-index"/>
+             <form method="POST" action="searchresults1.php" target="_blank">
+                 <br/><br/><input type="text" name="squery" placeholder="Search yourself..." class="search-index" />
+                 <input type="submit" name="search" value="Search" class="search-button-index"/>
              </form>
          </div>
      </section>

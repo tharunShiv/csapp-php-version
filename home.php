@@ -21,11 +21,16 @@
               <h1>Col<span style="color:#1ec87e">Sheet</span></h1>
 
           </div>
-<div class="buttons">
-	<input class="header-search" type="text" placeholder="Search yourself..."  />
-                 <input type="submit" value="Search" class="search-button-index"/><br/><br/>
+        <div style="margin-top:2%;width:50%;display:inline-block;float:left;" class="">
+          <form method="POST" action="searchresults.php">
+	<input class="header-search" name="squery" type="text" style="width:50%;" placeholder="Search yourself..."  />
+                 <input type="submit" value="Search" name="search" style="width:20%;" class="search-button-index"/><br/><br/>
+           </form>
+           </div>
+<div class="buttons" style="width:30%;" >
+  
            <form  method="post" action="home.php">
-          <button type="submit" class="header-buttons" name="logout">logout</button>
+          <button type="submit" class="header-buttons" style="width:70%;" name="logout">logout</button>
     </form>
 
 
