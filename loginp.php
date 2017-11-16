@@ -12,38 +12,56 @@
 <head>
 <title>Welcome | ColSheet</title>
 <link rel="stylesheet" type="text/css" href="./css/style.css">
+<link rel="stylesheet" type="text/css" href="./css/bootstrap.min.css">
 </head>
 <body>
 
+	<div class="container">
+		<header>
 
-	<header>
+
+		          <!--<img src="" alt="logo to come">
+				-->
+
+				<div class="navbar">
+			  <div class="name navbar-header">
+	              <a href="index.php" class="navbar-brand"><span style="color:black;font-size:26px;">Col</span><span style="color:#1ec87e;font-size:23px;">Sheet</span></a>
+	          </div>
+
+	          <ul class="nav navbar-nav navbar-right">
+	            <li><a class="header-b" href="loginp.php"><button class="header-buttons btn" >Scholar Login</button></a></li>
+	            <li><a class="header-b"  href="logini.php"> <button class="header-buttons btn" >Institution Login</button></a></li>
+	          </ul>
+	        </div>
 
 
+		</header>
+	</div>
+		<br/>
 
-		  <div class="name">
-		      <a href="index.php" style="text-decoration:none;color:black"> <h1>Col<span style="color:#1ec87e">Sheet</span></h1></a>
-          </div>
-<div class="buttons">
-
-            <a class="header-b" href="loginp.php"><button class="header-buttons" >Scholar Login</button></a>
-            <a class="header-b"  href="logini.php"> <button class="header-buttons" >Institution Login</button></a>
-        </div>
-    </header>
-
+<div class="container">
+	<div class="row">
+		<div class="col-xs-12 col-md-4 col-md-offset-4">
           <section>
-		<div id="login form" >
+						<h2>Scholar Login</h2>
+		<div >
 			<form method="POST" action="loginp.php">
-				<fieldset>
-                    <legend><b>Scholar Login</b></legend>
-				USERNAME:<input class="inputField" type="text" name="username" required><br/><br/>
-				PASSWORD:<input class="inputField"  type="password" name="password" required><br/><br/>
-				<input  type="submit" class="search-button-index" value="SUBMIT" name="login" />
 
 
-				</fieldset>
+
+         <div class="form-group">
+				USERNAME:<input class="form-control inputField" type="text" name="username" required><br/>
+				PASSWORD:<input class="form-control inputField"  type="password" name="password" required><br/><br/>
+				<input  type="submit" class="btn search-button-index" value="SUBMIT" name="login" />
+			</div>
+
+
             </form>
         </div>
 	</section>
+</div>
+</div>
+</div>
 
           <!--PHP part begins-->
 
@@ -83,10 +101,10 @@
 			}
 
 		}
-		
+
 		?>
 
-		
+
 
 
 

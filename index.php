@@ -11,68 +11,109 @@
 <title>Welcome | ColSheet</title>
 
 <link rel="stylesheet" type="text/css" href="./css/style.css?v=1">
+<link rel="stylesheet" type="text/css" href="./css/bootstrap.min.css">
+
 
 </head>
 <body>
+
+<div class="container">
 	<header>
-	
-		
+
+
 	          <!--<img src="" alt="logo to come">
 			-->
-		  <div class="name">	
-              <h1>Col<span style="color:#1ec87e">Sheet</span></h1>
+
+			<div class="navbar">
+		  <div class="name navbar-header">
+              <a href="index.php" class="navbar-brand"><span style="color:black;font-size:26px;">Col</span><span style="color:#1ec87e;font-size:23px;">Sheet</span></a>
           </div>
-        <div class="buttons">    
-		  
-            <a class="header-b" href="loginp.php"><button class="header-buttons" >Scholar Login</button></a>
-            <a class="header-b"  href="logini.php"> <button class="header-buttons" >Institution Login</button></a>
-          
+
+          <ul class="nav navbar-nav navbar-right">
+            <li><a class="header-b" href="loginp.php"><button class="header-buttons btn" >Scholar Login</button></a></li>
+            <li><a class="header-b"  href="logini.php"> <button class="header-buttons btn" >Institution Login</button></a></li>
+          </ul>
         </div>
+
+
 	</header>
-   
-     <div class="w3-content w3-section" style="width:100%">
-  <img class="mySlides w3-animate-fade" src="image/ec1.png" style="width:100%">
-  <img class="mySlides w3-animate-fade" src="image/4.png" style="width:100%">
-  <img class="mySlides w3-animate-fade" src="image/3.png" style="width:100%">
-  
-  
 </div>
-     
+	<br/>
+	<div style="width:100%;margin:0;">
+<div class="container-fluid">
+     <div class="w3-content w3-section" style="width:100%">
+  <img class="mySlides w3-animate-fade" src="image/ec1.png" style="width:100%;margin:0;">
+  <img class="mySlides w3-animate-fade" src="image/4.png" style="width:100%;margin:0;">
+  <img class="mySlides w3-animate-fade" src="image/3.png" style="width:100%;margin:0;">
+</div>
+</div>
+</div>
+
+
      <section>
+
+
          <div class="middle-index">
 		 <?php if(isset($_GET['msg'])){?>
 			<div class="alertmsg">
 	           <p style="color:green;"> Status:<?php echo $_GET['msg']; ?></p>
 			</div>
 		<?php } ?><br/>
-	     <a href="regp.php"><button class="middle-index-button" >Create an Account - Scholars</button></a>   
-         <br/><a href="regi.php"><button class="middle-index-button" >Create an Account - Institution</button></a>
-             
-             <form method="POST" action="searchresults1.php" target="_blank">
-                 <br/><br/><input type="text" name="squery" placeholder="Search yourself..." class="search-index" />
-                 <input type="submit" name="search" value="Search" class="search-button-index"/>
-             </form>
+
+
+    <div class="container">
+		 <div class="row">
+			 <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4 col-sm-offset-4 ">
+	            <a href="regp.php"><button class="btn middle-index-button" >Create an Account - Scholars</button></a>
+        </div>
+			</div>
+			<div class="row">
+				 <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4 col-sm-offset-4 ">
+							<a href="regi.php"><button class="btn middle-index-button" >Create an Account - Institution</button></a>
+        </div>
+			 </div>
+		 </div>
+			</div>
+		</div>
+<br/><br/>
+					<div class="container">
+             <form class="form-inline" method="POST" action="searchresults1.php" target="_blank">
+							 <div class="row">
+								 <div class="col-xs-12 col-sm-12 col-md-6 col-md-offset-3 form-group" >
+
+                 <input type="text" name="squery" placeholder="Search yourself..." class="form-control search-index" />
+                 <input type="submit" name="search" value="Search" class="btn search-button-index"/>
+               </div>
+						 </div>
+						 </form>
          </div>
+			 </div>
      </section>
-   
+
+<br/><br/>
+
     <section>
-          <div class="container-index">
-              <div class="left">
-                  <a href=""><img src="image/mvp.png" class="index-bottom-image" alt="Image Loading..."/></a> 
+			<div class="container">
+
+						<div class="row">
+              <div class="col-xs-6 col-sm-4 col-md-4 col-lg-4">
+                  <a href=""><img src="image/mvp.png" class="index-bottom-image" alt="Image Loading..."/></a>
               </div>
-              <div class="middle">
-                  <a href=""><img src="image/ec.png" class="index-bottom-image" alt="Image Loading..."/></a> 
+              <div class="col-xs-6 col-sm-4 col-md-4 col-lg-4">
+                  <a href=""><img src="image/ec.png" class="index-bottom-image" alt="Image Loading..."/></a>
               </div>
-              <div class="right">
-                  <a href=""><img src="image/mvpr.png" class="index-bottom-image" alt="Image Loading..."/></a> 
+              <div class="col-xs-6 col-sm-4 col-md-4 col-lg-4 col-xs-offset-3 col-sm-offset-0">
+                  <a href=""><img src="image/mvpr.png" class="index-bottom-image" alt="Image Loading..."/></a>
               </div>
-          </div>        
-    </section>   
-   
-   
-   
-   
-   
+						</div>
+          </div>
+
+    </section>
+
+
+
+
+
    <!--
 	<section>
 		<div id="login form" >
@@ -83,12 +124,12 @@
 				PASSWORD:<input type="password" name="password" required>
 				<button  type="submit" value="SUBMIT" name="login">SUBMIT</button>
 				<p ><a  href="" >Create Account</a></p>
-				
+
 				</fieldset>
             </form>
         </div>
 	</section>
-	
+
 	<section>
 		<div id="login form" >
 			<form method="POST" action="index.php">
@@ -98,7 +139,7 @@
 				PASSWORD:<input type="password" name="password" required>
 				<button  type="submit" value="SUBMIT" name="login1">SUBMIT</button>
 				<p ><a  href="" >Create Account</a></p>
-				
+
 				</fieldset>
             </form>
         </div>
@@ -118,17 +159,17 @@ function carousel() {
     var i;
     var x = document.getElementsByClassName("mySlides");
     for (i = 0; i < x.length; i++) {
-      x[i].style.display = "none";  
+      x[i].style.display = "none";
     }
     myIndex++;
-    if (myIndex > x.length) {myIndex = 1}    
-    x[myIndex-1].style.display = "block";  
-    setTimeout(carousel, 3000);    
+    if (myIndex > x.length) {myIndex = 1}
+    x[myIndex-1].style.display = "block";
+    setTimeout(carousel, 3000);
 }
 </script>
 
 	<!--PHP part begins-->
-	
+
 	<!--
 			if(isset($_POST['login']))
 			{
@@ -143,10 +184,10 @@ function carousel() {
 					if(mysqli_num_rows($query_run)>0)
 					{
 					$row = mysqli_fetch_array($query_run,MYSQLI_ASSOC);
-					
+
 					$_SESSION['username'] = $username;
 					$_SESSION['password'] = $password;
-					
+
 					header( "Location: homepage.php");
 					}
 					else
@@ -163,10 +204,10 @@ function carousel() {
 			{
 			}*/
 		?>
-	
-	
-	
+
+
+
 	-->
-	
+
 </body>
 </html>
