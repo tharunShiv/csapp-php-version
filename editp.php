@@ -12,42 +12,68 @@
 <head>
 <title>Welcome | ColSheet</title>
 <link rel="stylesheet" type="text/css" href="./css/style2.css">
+<link rel="stylesheet" type="text/css" href="./css/bootstrap.min.css">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 </head>
 <body>
-<header>
+	<div class="container-fluid">
+		<header>
 
 
-		  <div class="name">
-              <h1>Col<span style="color:#1ec87e">Sheet</span></h1>
-
-          </div>
-        <div style="margin-top:2%;width:50%;display:inline-block;float:left;" class="">
-          <form method="POST" action="searchresults.php">
-	<input class="header-search" name="squery" type="text" style="width:50%;" placeholder="Search yourself..."  />
-                 <input type="submit" value="Search" name="search" style="width:20%;" class="search-button-index"/><br/><br/>
-           </form>
-           </div>
-<div class="buttons" style="width:30%;" >
-
-           <form  method="post" action="home.php">
-          <button type="submit" class="header-buttons" style="width:70%;" name="logout">logout</button>
-    </form>
+			<div class="navbar">
+			<div class="name navbar-header">
+							<a href="index.php" class="navbar-brand"><span style="color:black;font-size:26px;">Col</span><span style="color:#1ec87e;font-size:23px;">Sheet</span></a>
+					</div>
 
 
+					<form class="navbar-form  navbar-left" method="POST" action="searchresults.php">
+						 <div class="form-group">
+							 <input class="header-search" name="squery" type="text"  placeholder="Search yourself..."  />
+						                  <input type="submit" value="Search" name="search" class="btn navbar-btn search-button-index"/>
+						 <!--<input type="text" class="form-control" placeholder="Search..."/>
+							<button type="submit" class="btn btn-default navbar-btn">Search</button>
+							---> </div>
+					</form>
+
+	<!--
+	        <div style="margin-top:2%;width:50%;display:inline-block;float:left;" class="">
+	          <form method="POST" action="searchresults.php">
+		<input class="header-search" name="squery" type="text" style="width:50%;" placeholder="Search yourself..."  />
+	                 <input type="submit" value="Search" name="search" style="width:20%;" class="search-button-index"/><br/><br/>
+	           </form>
+					 </div>--->
+	<div class="buttons" style="width:50%;" >
+
+	           <form  method="post" action="home.php">
+	          <button type="submit" class="btn header-buttons" style="width:70%;" name="logout">logout</button>
+	    </form>
 
 
-        </div>
-        </header>
-<hr/>
 
-<aside>
+
+	        </div>
+	        </header>
+				</div>
+	<hr/>
+
+
+	<div class="container" style="text-align:center;">
+
+	<div class="row">
+
+
+
+	<div class="col-xs-12 col-sm-4 col-md-4 ">
+	<aside style="border-left:1px solid #1ec87e">
 
     <h3 style="text-align:center;"> Welcome <span style="color:#1ec87e"><?php echo $_SESSION["username"]; ?></span></h3>
 
 <!--<img src="image/default-profile-picture.png" alt="user image" class="profilepic">-->
 <hr/>
 <ul style="list-style-type:none;">
-<p>My Dashboard</p>
+<h4>My Dashboard</h4>
 <li><a href="home.php" style="color:#1ec87e;
     text-decoration: none;font-size:18px;">HomePage</a></li>
 <li><a href="viewp.php" style="color:#1ec87e;
@@ -55,7 +81,7 @@
 
 </ul><hr/>
 <ul style="list-style-type:none;">
-<p>Co-Scholars</p>
+<h4>Co-Scholars</h4>
 <li><a href="" style="color:#1ec87e;
     text-decoration: none; font-size:18px;">view my co scholars</a></li>
 <li><a href="" style="color:#1ec87e;
@@ -63,7 +89,7 @@
 
 </ul><hr/>
 <ul style="list-style-type:none;">
-<p>publications</p>
+<h4>publications</h4>
 <li><a href="mypublications.php" style="color:#1ec87e;
     text-decoration: none;font-size:18px;">my publications</a></li>
 <li><a href="" style="color:#1ec87e;
@@ -71,7 +97,7 @@
 
 </ul ><hr/>
 <ul style="list-style-type:none;">
-<p>workshops</p>
+<h4>workshops</h4>
 <li><a href="" style="color:#1ec87e;
     text-decoration: none;font-size:18px;">my workshops</a></li>
 <li><a href="" style="color:#1ec87e;
@@ -80,7 +106,7 @@
 </ul>
 <hr/>
 <ul style="list-style-type:none;">
-<p>seminars</p>
+<h4>seminars</h4>
 <li><a href="" style="color:#1ec87e;
     text-decoration: none;font-size:18px;">upcomming seminars</a></li>
 <li><a href="" style="color:#1ec87e;
@@ -89,8 +115,10 @@
 </ul>
 
 </aside>
+</div>
 
 
+<div class="col-xs-12  col-sm-4 col-md-4 ">
 <section class="main-middle">
     <div class="epwrapper">
      <?php
@@ -120,9 +148,9 @@
                  echo "<br>";
          //}
      ?>
-     <h2 style="color:black;font-weight:bold;text-align:center">Username: <span style="color:#1ec87e;"><?php echo $_SESSION['username']; ?></span></h2>
+     <h2 style="color:black;text-align:center">Username: <span style="color:#1ec87e;"><?php echo $_SESSION['username']; ?></span></h2>
 
-     <h2>Change Profile Picture</h2>
+     <h3>Change Profile Picture</h2>
      <form action="editp.php" method="post" enctype="multipart/form-data">
                         <input type="file" name="file" required>
                         <button type="submit" name="submitpp">Upload Profile Picture</button>
@@ -145,13 +173,13 @@
 </div>
 
 </section>
+</div>
 
 
-
-
+<div class="col-xs-12 col-sm-4 col-md-4 " style="margin-top:15px;">
 <aside class="left">
 <ul style="list-style-type:none;">
-<p>most viewed publications</p>
+<h4>most viewed publications</h4>
 <li><a href="" style="color:#1ec87e;
     text-decoration: none;font-size:18px;">an intro to space</a></li>
 <li><a href="" style="color:#1ec87e;
@@ -159,7 +187,7 @@
 
 </ul><hr/>
 <ul style="list-style-type:none;">
-<p>latest publications</p>
+<h4>latest publications</h4>
 <li><a href="" style="color:#1ec87e;
     text-decoration: none;font-size:18px;">cloud computing</a></li>
 <li><a href="" style="color:#1ec87e;
@@ -167,7 +195,7 @@
 
 </ul><hr/>
 <ul style="list-style-type:none;">
-<p>editors choice</p>
+<h4>editors choice</h4>
 <li><a href="" style="color:#1ec87e;
     text-decoration: none;font-size:18px;">Machine Learning</a></li>
 <li><a href="" style="color:#1ec87e;
@@ -175,8 +203,9 @@
 
 </ul>
 </aside>
-
-
+</div>
+</div>
+</div>
 
 <?php
 
@@ -197,7 +226,8 @@
 //ELSE REMOVED FROM here
 
 -->
-
+<footer style="height:100px;">
+</footer>
 
 
 
@@ -278,3 +308,11 @@
 
 </body>
 </html>
+
+
+<!--
+
+
+
+
+--->

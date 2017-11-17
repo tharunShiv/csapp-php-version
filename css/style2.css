@@ -6,28 +6,25 @@ a{
 body{
     font-family:helvetica;
     background-image: url('../image/bg7.png');
-    
+
     background-repeat: no-repeat;
     background-size: 100%;
 
 }
 
 header{
-    display:inline-block;
+
     width:100%;
     border-left:4px solid #1ec87e;
     text-align: center;
-    height:100px;
+
 
 }
 
-header h1{
-    font-size:28px;
-}
+
 
 .name{
-    display:inline-block;
-    float:left;
+
     padding:12px;
     margin-left:2%;
 }
@@ -65,11 +62,11 @@ a{
     display:inline-block;
 }
 .header-search{
-width:30%;
+
 
 display:inline-block;
     padding:10px;
-    float:left;
+
     border-left:2px solid #1ec87e;
     border-right:1px solid #1ec87e;
     border-top:1px solid #1ec87e;
@@ -115,16 +112,14 @@ display:inline-block;
 }
 
 .search-button-index{
-    margin-left:1%;
-     width:10%;
+
     border:2px solid #1ec87e;
     border-radius:30px;
     background-color:#1ec87e;
     color:white;
     font-weight:bold;
     padding:9px;
-    display:inline-block;
-    float:left;
+
     text-align: center;
 
 
@@ -137,7 +132,7 @@ display:inline-block;
 }
 
 .upbutton{
-  width:20%;
+
   border:2px solid #1ec87e;
   border-radius:30px;
   background-color:#1ec87e;
@@ -179,6 +174,8 @@ display:inline-block;
     border-radius:300px;
 }
 
+
+/*
 .left{
     display:inline-block;
     float:left;
@@ -242,7 +239,7 @@ min-height:700px;
 .main-middle h2{
   color:#1ec87e;
 }
-
+*/
 .alertmsg{
   width:99%;
   margin:auto;
@@ -254,6 +251,8 @@ min-height:700px;
   display:inline-block;
 
 }
+
+
 .profilepic{
   width:200px;
   display:block;

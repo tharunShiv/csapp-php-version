@@ -10,6 +10,8 @@
 <head>
 <title>Welcome | ColSheet</title>
 
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <link rel="stylesheet" type="text/css" href="./css/style.css?v=1">
 <link rel="stylesheet" type="text/css" href="./css/bootstrap.min.css">
 
@@ -96,13 +98,13 @@
 			<div class="container">
 
 						<div class="row">
-              <div class="col-xs-6 col-sm-4 col-md-4 col-lg-4">
+              <div class="col-xs-6 col-sm-4 col-md-4 col-lg-4" style="text-align:center;">
                   <a href=""><img src="image/mvp.png" class="index-bottom-image" alt="Image Loading..."/></a>
               </div>
-              <div class="col-xs-6 col-sm-4 col-md-4 col-lg-4">
+              <div class="col-xs-6 col-sm-4 col-md-4 col-lg-4" style="text-align:center;">
                   <a href=""><img src="image/ec.png" class="index-bottom-image" alt="Image Loading..."/></a>
               </div>
-              <div class="col-xs-6 col-sm-4 col-md-4 col-lg-4 col-xs-offset-3 col-sm-offset-0">
+              <div class="col-xs-6 col-sm-4 col-md-4 col-lg-4 col-xs-offset-3 col-sm-offset-0" style="text-align:center;">
                   <a href=""><img src="image/mvpr.png" class="index-bottom-image" alt="Image Loading..."/></a>
               </div>
 						</div>
